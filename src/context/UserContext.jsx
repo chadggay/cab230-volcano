@@ -63,8 +63,6 @@ export const UserProvider = ({ children }) => {
       // handle API related errors
       const login = await response.json();
 
-      console.log("login", login);
-
       if (login.error) {
         throw new Error(login.message);
       }

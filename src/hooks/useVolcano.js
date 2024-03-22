@@ -14,12 +14,9 @@ export const useVolcano = (volcanoId) => {
       try {
         const token = await getAccessToken();
 
-        console.log("token", token);
-
         const data = await getVolcanoById(volcanoId, token);
         setVolcano(data);
       } catch (error) {
-        console.log(error);
         setError(error);
       } finally {
         setLoading(false);
